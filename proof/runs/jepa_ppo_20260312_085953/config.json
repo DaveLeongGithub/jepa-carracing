@@ -1,0 +1,14 @@
+{
+  "total_timesteps": 400000,
+  "device": "cuda",
+  "lr": 0.0003,
+  "fixed_skip": 4,
+  "buffer_size": 2,
+  "output_dir": null,
+  "seed": 42,
+  "eval_freq": 50000,
+  "eval_episodes": 5,
+  "n_envs": 1,
+  "device_selected": "cuda",
+  "timestamp": "20260312_085953"
+}

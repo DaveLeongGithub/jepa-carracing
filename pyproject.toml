@@ -1,0 +1,57 @@
+[project]
+name = "jepa-carracing"
+version = "0.1.0"
+description = "V-JEPA 2 + PPO training and proof artifact for Gymnasium CarRacing-v3"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "MIT" }
+
+dependencies = [
+    # ---- PyTorch (MPS on Apple Silicon) ----
+    "torch>=2.4.0",
+    "torchvision>=0.19.0",
+    # ---- V-JEPA 2 model loading ----
+    "transformers @ git+https://github.com/huggingface/transformers",
+    "accelerate>=1.0.0",
+    "einops>=0.8.0",
+    "timm>=1.0.0",
+    # ---- Gymnasium environment ----
+    "swig>=4.0.0",
+    "gymnasium[box2d]>=1.0.0",
+    # ---- RL baselines (reference only — we skip training) ----
+    "stable-baselines3[extra]>=2.3.0",
+    # ---- Data / viz / stats ----
+    "opencv-python-headless>=4.10.0",
+    "matplotlib>=3.9.0",
+    "numpy>=1.26.0",
+    "scipy>=1.14.0",
+    "tqdm>=4.66.0",
+    "tensorboard>=2.17.0",
+    # ---- Video decoding (V-JEPA 2 preprocessor) ----
+    "torchcodec>=0.1.0",
+    "ale-py>=0.8",
+    "shimmy[atari]>=2.0",
+    "sentence-transformers>=3.0",
+]
+
+[project.scripts]
+jepa-eval = "src.eval_jepa_ppo:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]

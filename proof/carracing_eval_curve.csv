@@ -1,0 +1,9 @@
+phase,total_steps,mean_eval_reward,max_episode_reward
+initial,50000,15.17,115.83
+initial,100000,202.47,305.32
+initial,150000,122.69,204.64
+initial,200000,624.38,849.79
+initial,250000,759.18,882.21
+initial,300000,698.08,827.80
+resume,350000,763.39,908.20
+resume,400000,756.37,857.85

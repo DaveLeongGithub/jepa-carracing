@@ -1,0 +1,15 @@
+{
+  "total_timesteps": 100000,
+  "device": "cuda",
+  "lr": 0.0003,
+  "fixed_skip": 4,
+  "buffer_size": 2,
+  "output_dir": "runs/jepa_ppo_resume_300k",
+  "seed": 42,
+  "eval_freq": 50000,
+  "eval_episodes": 5,
+  "n_envs": 1,
+  "resume": "runs/jepa_ppo_20260312_085953/checkpoints/jepa_ppo_300000_steps.zip",
+  "device_selected": "cuda",
+  "timestamp": "20260312_170919"
+}
