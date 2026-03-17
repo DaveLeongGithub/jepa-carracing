@@ -19,7 +19,7 @@ dependencies = [
     "swig>=4.0.0",
     "gymnasium[box2d]>=1.0.0",
     # ---- RL baselines (reference only — we skip training) ----
-    "stable-baselines3[extra]>=2.3.0",
+    "stable-baselines3>=2.3.0",
     # ---- Data / viz / stats ----
     "opencv-python-headless>=4.10.0",
     "matplotlib>=3.9.0",
