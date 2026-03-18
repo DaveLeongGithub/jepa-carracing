@@ -49,7 +49,7 @@ class VJEPAEncoder(nn.Module):
     Args:
         device: Target device ("mps", "cuda", or "cpu")
         frozen: If True, all V-JEPA 2 parameters are frozen (no grad)
-        buffer_size: Number of recent frames to stack (default 16)
+        buffer_size: Number of recent frames to stack (default 2)
         dtype: Model precision (default float32 for MPS compatibility)
     """
 

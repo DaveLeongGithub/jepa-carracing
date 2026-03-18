@@ -1,10 +1,10 @@
-# Substack Article 1 - JEPA
-
-## Frozen Video Encoders for Control: V-JEPA 2 on CarRacing-v3
+# Frozen Video Encoders for Control: V-JEPA 2 on CarRacing-v3
 
 A fully frozen 300M-parameter V-JEPA 2 video encoder, paired with a 657K-parameter PPO policy head, reached **+763 mean eval reward** on `CarRacing-v3` on a single NVIDIA RTX 3080.
 
-This public repository is a **results artifact** for **Substack Article 1 - JEPA**. It contains the headline benchmark summary, learning-curve asset, and results brief for public review.
+**Full write-up:** [I Froze a 300M-Parameter Video Model and It Learned to Drive](https://daveleongai.substack.com/p/i-froze-a-300m-parameter-video-model) (Substack)
+
+This public repository is a **results artifact** for the article above. It contains the headline benchmark summary, learning-curve asset, code, and proof bundle for public review.
 
 ![V-JEPA 2 Learning Curve](assets/VJEPA2-Learning-Curve.png)
 
@@ -33,7 +33,7 @@ The encoder stayed frozen throughout training. Only the downstream policy head l
 ## Experimental Setup
 
 ```text
-RGB Frames (2-frame buffer, 64x64)
+RGB Frames (2-frame buffer, 96x96)
     ↓
 V-JEPA 2 ViT-L (300M params, FROZEN)
 facebook/vjepa2-vitl-fpc64-256
@@ -54,25 +54,14 @@ Key details:
 - 400K total training steps
 - Single RTX 3080 (10GB)
 
-## Public Scope
+## Repository Contents
 
-This repo currently publishes:
+- `src/` — training and evaluation code for the JEPA + PPO result
+- `pyproject.toml` and `uv.lock` — reproducible Python environment
+- `proof/` — run configs, evaluation traces, training logs, and saved checkpoints for the 350K best mean and the 400K final plateau
+- `assets/` — learning curve chart and one-page results brief
 
-- the benchmark headline result
-- the learning-curve image
-- a short technical results brief
-
-It does **not** include every private experiment or the full internal repo. This is intentional: the goal of this public repo is to publish the smallest honest bundle that lets a reader inspect the training path and verify the reported result.
-
-## Code Artifact
-
-This repo now includes the minimum code and proof files needed to inspect the claim:
-
-- `src/` contains the CarRacing training and evaluation path used for the JEPA + PPO result
-- `pyproject.toml` and `uv.lock` capture the Python environment
-- `proof/` contains the run configs, evaluation traces, training logs, and the saved checkpoints needed to verify the 350K best mean and the 400K final plateau
-
-If you only want the reader-facing proof path, start with [proof/PROOF.md](proof/PROOF.md).
+For the proof verification path, see [proof/PROOF.md](proof/PROOF.md).
 
 ## Caveats
 
@@ -115,4 +104,4 @@ See [VJEPA2-RL-Results-Brief.pdf](assets/VJEPA2-RL-Results-Brief.pdf) for the on
 
 ## Contact
 
-Dave Leong - dl@daveleong.com - [LinkedIn](https://linkedin.com/in/daveleongsingapore)
+Dave Leong - dl@daveleong.com - [LinkedIn](https://linkedin.com/in/daveleongsingapore) - [Substack](https://daveleongai.substack.com)

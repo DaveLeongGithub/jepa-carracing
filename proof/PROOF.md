@@ -52,11 +52,11 @@ Those values are also exported in `carracing_eval_curve.csv`.
 From the repo root:
 
 ```bash
-uv sync
+uv sync --frozen
 uv run python -m src.eval_jepa_ppo \
   --model_path "proof/runs/jepa_ppo_resume_300k/best_model.zip" \
   --episodes 5 \
-  --device cuda
+  --device auto
 ```
 
 Expected target:

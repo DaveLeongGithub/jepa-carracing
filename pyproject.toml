@@ -18,7 +18,7 @@ dependencies = [
     # ---- Gymnasium environment ----
     "swig>=4.0.0",
     "gymnasium[box2d]>=1.0.0",
-    # ---- RL baselines (reference only — we skip training) ----
+    # ---- RL training ----
     "stable-baselines3>=2.3.0",
     # ---- Data / viz / stats ----
     "opencv-python-headless>=4.10.0",
@@ -29,9 +29,6 @@ dependencies = [
     "tensorboard>=2.17.0",
     # ---- Video decoding (V-JEPA 2 preprocessor) ----
     "torchcodec>=0.1.0",
-    "ale-py>=0.8",
-    "shimmy[atari]>=2.0",
-    "sentence-transformers>=3.0",
 ]
 
 [project.scripts]
