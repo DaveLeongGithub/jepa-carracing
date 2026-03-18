@@ -59,7 +59,7 @@ Key details:
 - `src/` — training and evaluation code for the JEPA + PPO result
 - `pyproject.toml` and `uv.lock` — reproducible Python environment
 - `proof/` — run configs, evaluation traces, training logs, and saved checkpoints for the 350K best mean and the 400K final plateau
-- `assets/` — learning curve chart and one-page results brief
+- `assets/` — learning curve chart
 
 For the proof verification path, see [proof/PROOF.md](proof/PROOF.md).
 
@@ -97,10 +97,6 @@ For the exact learning-curve milestones used in the article, see:
 
 - [proof/PROOF.md](proof/PROOF.md)
 - [proof/carracing_eval_curve.csv](proof/carracing_eval_curve.csv)
-
-## Results Brief
-
-See [VJEPA2-RL-Results-Brief.pdf](assets/VJEPA2-RL-Results-Brief.pdf) for the one-page technical summary.
 
 ## Contact
 
